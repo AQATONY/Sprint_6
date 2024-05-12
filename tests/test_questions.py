@@ -1,8 +1,7 @@
 import allure
-from pages.question_page import Questions
-from data import Urls
+from pages.questions_page import Questions
 import pytest
-from selenium import webdriver
+from conftest import driver
 
 @allure.title('Проверка вопросов')
 @allure.description('Кликаем по вопросам и смотрим ответ')
@@ -17,10 +16,7 @@ from selenium import webdriver
 (7, 'Да, обязательно. Всем самокатов! И Москве, и Московской области.')
 ])
 def test_question(i, expected_result):
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get(Urls.url)
     question_page = Questions(driver) # Инициализируем класс с передачей драйвера
     result = question_page.set_question(i)
     assert result == expected_result, f"Expected '{expected_result}', got '{result}'"
-    driver.quit()
+
