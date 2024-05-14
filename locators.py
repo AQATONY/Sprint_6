@@ -38,7 +38,8 @@ class MainLocators:
     Question = "(By.ID, *accordion__heading-{number}*)"
     Answer = "(By.ID, *accordion__panel-{number}*)"
     yes_all = "//button[contains(text(),'да все привыкли')]"
+    question = "(By.ID, f'accordion__heading-{i}')"
+    answer = "(By.ID, f'accordion__panel-{i}')"
 
     logo_samokat_click = "//a[contains(@class,'Header_LogoScooter__3lsAR')]"
     logo_ya_click = "//a[contains(@class,'Header_LogoYandex__3TSOI')]"
-

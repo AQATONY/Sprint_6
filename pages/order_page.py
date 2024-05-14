@@ -27,3 +27,7 @@ class OrderPage(BasePage):
         self.driver.find_element(By.XPATH, MainLocators.input_comment).send_keys('i wanna sleep')
         self.driver.find_element(By.XPATH, MainLocators.click_order).click()
         self.driver.find_element(By.XPATH, MainLocators.order_yes_button).click()
+
+    @allure.step('Ожидание алерта посмтреть статус заказа')
+    def wait_of_alert(self):
+        self.wait_and_find_element(MainLocators.button_check_order)

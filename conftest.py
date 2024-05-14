@@ -1,8 +1,7 @@
 import pytest
 from selenium import webdriver
+from data import Urls
 
-class Urls:
-    url = 'https://qa-scooter.praktikum-services.ru/'
 @pytest.fixture(scope='function')
 def driver():
     # инициализируем драйвер
