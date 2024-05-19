@@ -1,6 +1,7 @@
 import allure
 from pages.base_page import BasePage
 from locators import MainLocators
+from data import Urls
 
 
 class MainPage(BasePage):
@@ -27,4 +28,7 @@ class MainPage(BasePage):
     def click_logo_ya(self):
         self.click(MainLocators.logo_ya_click)
 
-
+    def go_to_order_page(self):
+        self.driver.get(Urls.url + "/order")
+        # После перехода на страницу заказа кликнуть на лого "Самокат",
+        self.click_logo_samokat()

@@ -4,7 +4,6 @@ from pages.base_page import BasePage
 from locators import MainLocators
 
 
-
 class OrderPage(BasePage):
     @allure.step('Ввод ФИ, города, станции, номера')
     def order_filling_fields(self):
@@ -15,7 +14,6 @@ class OrderPage(BasePage):
         self.driver.find_element(By.XPATH, MainLocators.select_by_value).click()
         self.driver.find_element(By.XPATH, MainLocators.phone).send_keys("89995402422")
         self.driver.find_element(By.XPATH, MainLocators.click_next).click()
-
 
     @allure.step('Ввод даты, срока, цвета, комментария')
     def order_samokat_fields_1(self):
@@ -30,4 +28,5 @@ class OrderPage(BasePage):
 
     @allure.step('Ожидание алерта посмтреть статус заказа')
     def wait_of_alert(self):
-        self.wait_and_find_element(MainLocators.button_check_order)
+        self.driver.wait_and_find_element(MainLocators.button_check_order)
+        return self.wait_of_alert(MainLocators.button_check_order)

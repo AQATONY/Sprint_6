@@ -43,3 +43,4 @@ class MainLocators:
 
     logo_samokat_click = "//a[contains(@class,'Header_LogoScooter__3lsAR')]"
     logo_ya_click = "//a[contains(@class,'Header_LogoYandex__3TSOI')]"
+

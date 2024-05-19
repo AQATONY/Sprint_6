@@ -20,7 +20,8 @@ class BasePage:
         self.driver.get(driver)
 
     def click(self, locator):
-        WebDriverWait(self.driver, 5).until(expected_conditions.visibility_of_element_located(locator)).click()
+        element = self.wait_and_find_element(locator, self.driver)
+        element.click()
 
     def expect_url_to_be(self, url):
         WebDriverWait(self.driver, 5).until(
@@ -29,3 +30,6 @@ class BasePage:
     def switch_to_new_window(self):
         new_window = self.driver.window_handles[1]
         self.driver.switch_to.window(new_window)
+
+    def get_current_url(self):
+        return self.driver.current_url

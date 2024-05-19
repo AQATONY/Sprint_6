@@ -2,7 +2,6 @@ import allure
 from pages.main_page import MainPage
 from pages.base_page import BasePage
 from conftest import driver
-from conftest import Urls
 
 
 @allure.feature('Тесты редиректов')  # Добавляем общую категорию теста
@@ -10,10 +9,9 @@ class TestLogoRedirects:  # Объединяем тесты в класс
     @allure.title('Проверка редиректов')
     @allure.description('Кликаем на элементы и проверяем редирект')
     def test_logo_samokat(driver):
-        driver.get(Urls.url + "/order")
         main_page = MainPage(BasePage)
-        main_page.click_logo_samokat()
-        assert driver.current_url == "https://qa-scooter.praktikum-services.ru/"
+        main_page.go_to_order_page()
+        assert main_page.get_current_url() == "https://qa-scooter.praktikum-services.ru/"
 
     @allure.title('Проверка редиректов')
     @allure.description('Кликаем на элементы и проверяем редирект')

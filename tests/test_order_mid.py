@@ -1,7 +1,7 @@
 import allure
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
-from locators import MainLocators
+from conftest import driver
 
 
 @allure.feature('Заказ самоката по клику на кнопку заказать в середине страницы')  # Добавляем общую категорию теста
@@ -14,5 +14,5 @@ class TestOrderMid:  # Объединяем тесты в класс
         main_page.click_on_order_mid()
         order_page.order_filling_fields()
         order_page.order_samokat_fields_1()
-        button = order_page.wait_of_alert(MainLocators.button_check_order)
+        button = order_page.wait_of_alert()
         assert button, "Кнопка посмотреть статус заказа не найдена"
