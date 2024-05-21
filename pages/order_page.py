@@ -28,5 +28,5 @@ class OrderPage(BasePage):
 
     @allure.step('Ожидание алерта посмтреть статус заказа')
     def wait_of_alert(self):
-        self.driver.wait_and_find_element(MainLocators.button_check_order)
+        self.wait_and_find_element(MainLocators.button_check_order)
         return self.wait_of_alert(MainLocators.button_check_order)

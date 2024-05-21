@@ -29,6 +29,6 @@ class MainPage(BasePage):
         self.click(MainLocators.logo_ya_click)
 
     def go_to_order_page(self):
-        self.driver.get(Urls.url + "/order")
+        self.open_page(Urls.url + "/order")
         # После перехода на страницу заказа кликнуть на лого "Самокат",
         self.click_logo_samokat()
